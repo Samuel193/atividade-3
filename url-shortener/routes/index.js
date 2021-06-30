@@ -1,6 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+/**
+ *  Funcção para gerar codigo encurtado.
+ * 
+ 
+*/
+/**
+ * 
+ */
+
 router.get('/:code/stats', async (req, res, next) => {
   const code = req.params.code;
   const resultado = await Link.findOne({ where: { code } });
@@ -32,6 +41,20 @@ router.get('/', function (req, res, next) {
 });
 
 
+/**
+ * @module generateCode
+ */
+
+/**
+ * Gera o coigo a ser incluido no encurtador
+ *
+ * @param {Express.Request} req
+ * @param {Express.Response} res
+ * @returns
+ * 
+
+ */
+
 function generateCode() {
   let text = '';
   const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -52,3 +75,4 @@ router.post('/new', async (req, res, next) => {
 })
 
 module.exports = router;
+
